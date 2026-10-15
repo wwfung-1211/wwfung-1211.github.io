@@ -1,0 +1,171 @@
+/* General styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Navigation */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #020617;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* Sections */
+
+section {
+    padding: 100px 10%;
+}
+
+section h2 {
+    margin-bottom: 25px;
+}
+
+/* Hero Section */
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #38bdf8;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.hero p {
+    margin-bottom: 30px;
+}
+
+/* Button */
+
+.button {
+    background: #38bdf8;
+    color: #020617;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.button:hover {
+    background: #0ea5e9;
+}
+
+/* Skills */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skills span {
+    padding: 10px 20px;
+    background: #1e293b;
+    border-radius: 8px;
+}
+
+/* Projects */
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.project-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+.project-card a {
+    color: #38bdf8;
+}
+
+/* Contact links */
+
+#contact a {
+    color: #38bdf8;
+    margin-right: 20px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #020617;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    section {
+        padding: 70px 7%;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+}
