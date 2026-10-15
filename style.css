@@ -8,23 +8,29 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-    line-height: 1.6;
+    font-family: "Courier New", Courier, monospace;
+    background: #080808;
+    color: #f0e6c5;
+    line-height: 1.7;
+    background-image: repeating-linear-gradient(0deg, transparent 0 3px, #00000012 3px 4px);
 }
 
 /* Navigation */
 
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    background: #020617;
+    background: #000000;
+    border-bottom: 2px solid #f5cf54;
 }
 
 nav ul {
@@ -35,11 +41,11 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: #f0e6c5;
 }
 
 nav a:hover {
-    color: #38bdf8;
+    color: #f5cf54;
 }
 
 /* Sections */
@@ -48,8 +54,28 @@ section {
     padding: 100px 10%;
 }
 
+section + section {
+    border-top: 1px solid #f5cf54;
+}
+
 section h2 {
     margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+section > h2::before {
+    content: "> ";
+    color: #f5cf54;
+}
+
+#about > ul {
+    padding-left: 24px;
+}
+
+a:focus-visible {
+    outline: 2px dashed #f5cf54;
+    outline-offset: 6px;
 }
 
 /* Hero Section */
@@ -63,7 +89,7 @@ section h2 {
 
 .hero h1 {
     font-size: 3rem;
-    color: #38bdf8;
+    color: #f5cf54;
 }
 
 .hero h2 {
@@ -78,16 +104,50 @@ section h2 {
 /* Button */
 
 .button {
-    background: #38bdf8;
-    color: #020617;
+    background: #f5cf54;
+    color: #000000;
     padding: 12px 25px;
-    border-radius: 8px;
+    border-radius: 0;
     text-decoration: none;
     width: fit-content;
+    border: 2px solid #f5cf54;
+    box-shadow: 5px 5px 0 #8a6b1f;
+    font-weight: bold;
 }
 
 .button:hover {
-    background: #0ea5e9;
+    background: #ffe58a;
+}
+
+/* About */
+
+.about-highlight {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+    align-items: center;
+    gap: 30px;
+    margin-top: 35px;
+    padding: 30px;
+    border: 2px solid #f5cf54;
+    box-shadow: 6px 6px 0 #514018;
+    background: #14120a;
+    border-radius: 0;
+}
+
+.about-highlight h3 {
+    color: #f5cf54;
+    margin-bottom: 12px;
+}
+
+.about-highlight img {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
 }
 
 /* Skills */
@@ -100,8 +160,10 @@ section h2 {
 
 .skills span {
     padding: 10px 20px;
-    background: #1e293b;
-    border-radius: 8px;
+    border: 1px solid #9c8135;
+    color: #f5cf54;
+    background: #14120a;
+    border-radius: 0;
 }
 
 /* Projects */
@@ -113,25 +175,29 @@ section h2 {
 }
 
 .project-card {
-    background: #1e293b;
+    background: #14120a;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 0;
     width: 320px;
+    max-width: 100%;
+    border: 2px solid #9c8135;
+    box-shadow: 6px 6px 0 #514018;
+    transition: transform 0.2s;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    transition: 0.3s;
+    border-color: #f5cf54;
 }
 
 .project-card a {
-    color: #38bdf8;
+    color: #f5cf54;
 }
 
 /* Contact links */
 
 #contact a {
-    color: #38bdf8;
+    color: #f5cf54;
     margin-right: 20px;
 }
 
@@ -140,12 +206,16 @@ section h2 {
 footer {
     text-align: center;
     padding: 30px;
-    background: #020617;
+    background: #000000;
 }
 
 /* Mobile responsiveness */
 
 @media (max-width: 768px) {
+    html {
+        scroll-padding-top: 150px;
+    }
+
     nav {
         flex-direction: column;
         gap: 15px;
@@ -167,5 +237,10 @@ footer {
 
     .project-card {
         width: 100%;
+    }
+
+    .about-highlight {
+        grid-template-columns: 1fr;
+        padding: 24px;
     }
 }
